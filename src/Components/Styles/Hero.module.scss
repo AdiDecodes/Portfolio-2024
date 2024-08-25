@@ -1,0 +1,149 @@
+// * {
+// 	border: 1px solid red;
+// }
+
+.main {
+	min-height: 95vh;
+	background-color: var(--bg);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	padding: 0 2rem;
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	div,
+	span {
+		line-height: normal;
+	}
+
+	> .sectionOne {
+		display: flex;
+
+		> .text {
+			display: flex;
+			align-items: center;
+
+			> p {
+				font-size: 7vw;
+				color: #ffffffce;
+				font-family: 'Neue';
+				font-weight: 300;
+			}
+
+			> .blockWrapper {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.4rem;
+				margin: 0 0 0 2rem;
+
+				.block {
+					height: 7vw;
+
+					&:nth-child(1) {
+						width: 2rem;
+						background-color: white;
+					}
+
+					&:nth-child(2) {
+						width: 1.6rem;
+						background-color: white;
+					}
+
+					&:nth-child(3) {
+						width: 1.3rem;
+						background-color: white;
+						opacity: 0.9;
+					}
+
+					&:nth-child(4) {
+						width: 1rem;
+						background-color: white;
+						opacity: 0.8;
+					}
+
+					&:nth-child(5) {
+						width: 0.8rem;
+						background-color: white;
+						opacity: 0.7;
+					}
+
+					&:nth-child(6) {
+						width: 0.4rem;
+						background-color: white;
+						opacity: 0.55;
+					}
+
+					&:nth-child(7) {
+						width: 0.2rem;
+						background-color: white;
+						opacity: 0.4;
+					}
+				}
+			}
+		}
+
+		> .info {
+			font-size: 7vw;
+			color: #ffffffce;
+			font-family: 'Neue';
+			font-weight: 300;
+			text-align: center;
+			width: 100%;
+		}
+	}
+
+	> .sectionTwo {
+		display: flex;
+		gap: 3rem;
+
+		> p {
+			font-size: 7vw;
+			color: white;
+			font-family: 'Chillax';
+			font-weight: 600;
+		}
+	}
+
+	> .sectionThree {
+		display: flex;
+		width: 100%;
+
+		> .image {
+			height: 17rem;
+			width: 20%;
+
+			> img {
+				height: 100%;
+			}
+		}
+
+		> .textRight {
+			display: flex;
+			flex-direction: column;
+			width: 80%;
+
+			> .text {
+				font-size: 7vw;
+				color: #ffffffce;
+				font-family: 'Neue';
+				font-weight: 300;
+
+				&:nth-child(1) {
+					margin-left: 10rem;
+				}
+
+				&:nth-child(2) {
+					text-align: right;
+				}
+			}
+		}
+	}
+}

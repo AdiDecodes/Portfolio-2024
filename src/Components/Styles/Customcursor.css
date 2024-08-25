@@ -1,0 +1,33 @@
+/* CustomCursor.css */
+.custom-cursor,
+.cursor-follower {
+	position: fixed;
+	pointer-events: none;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	z-index: 9999;
+	transform: translate(-50%, -50%);
+	transition: transform 0.2s ease-out,
+		width 0.2s ease-out, height 0.2s ease-out,
+		opacity 0.2s ease-out;
+}
+
+.custom-cursor {
+	background-color: var(--bg);
+	width: 10px;
+	height: 10px;
+}
+
+.cursor-follower {
+	background-color: #ffffff;
+	width: 30px;
+	height: 30px;
+	mix-blend-mode: normal;
+}
+
+.cursor-follower.is-hovering {
+	width: 60px;
+	height: 60px;
+	mix-blend-mode: difference;
+}

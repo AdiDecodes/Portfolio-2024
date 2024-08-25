@@ -1,0 +1,162 @@
+.main {
+	background-color: var(--bg);
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 0 2rem;
+
+	p {
+		line-height: 6vw;
+	}
+
+	> .left {
+		height: 100%;
+		width: 50%;
+
+		> .titleOne {
+			> p {
+				font-size: 6vw;
+				font-weight: 400;
+				color: white;
+				font-family: 'Chillax';
+			}
+		}
+
+		> .titleTwo {
+			> p {
+				font-size: 6vw;
+				font-weight: 400;
+				color: white;
+				font-family: 'Chillax';
+				text-align: right;
+				width: 50%;
+			}
+		}
+
+		> .subtext {
+			p {
+				font-size: 0.7vw;
+				font-weight: 400;
+				color: var(--subtext);
+				font-family: 'Neue';
+				width: 50%;
+				text-align: right;
+				line-height: 2vw;
+				letter-spacing: 0.2rem;
+			}
+		}
+
+		> .image {
+			height: 25rem;
+			aspect-ratio: 1;
+			margin: 6rem 0 0 2rem;
+
+			> img {
+				height: 100%;
+				width: 100%;
+				border-radius: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	> .right {
+		height: 100%;
+		width: 50%;
+
+		> .roleWrapper {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			> .itemOne {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+
+				@keyframes fadeInOut {
+					0%,
+					33.33%,
+					100% {
+						color: white;
+						opacity: 0;
+					}
+					16.66% {
+						opacity: 1;
+					}
+				}
+
+				> svg {
+					font-size: 5rem;
+					color: transparent;
+					transition: all 0.3s ease;
+					transform: rotate(90deg);
+					animation: fadeInOut 6s linear infinite;
+
+					&:nth-of-type(1) {
+						animation-delay: 0s;
+					}
+
+					&:nth-of-type(2) {
+						animation-delay: 2s;
+					}
+
+					&:nth-of-type(3) {
+						animation-delay: 4s;
+					}
+				}
+
+				p {
+					font-size: 1vw;
+					font-weight: 400;
+					color: white;
+					font-family: 'Neue';
+					margin: 0 0 0 2.5rem;
+				}
+
+				&:hover {
+					cursor: pointer;
+					> svg {
+						color: var(--subtext);
+					}
+				}
+			}
+
+			> .itemOne:nth-child(1) {
+				> svg {
+					animation: fadeInOut 6s ease infinite;
+					animation-delay: 0s;
+				}
+			}
+
+			> .itemOne:nth-child(2) {
+				> svg {
+					animation: fadeInOut 6s ease infinite;
+					animation-delay: 2s;
+				}
+			}
+
+			> .itemOne:nth-child(3) {
+				> svg {
+					animation: fadeInOut 6s ease infinite;
+					animation-delay: 4s;
+				}
+			}
+		}
+
+		> .description {
+			margin: 15rem 0 0 0;
+
+			> p {
+				line-height: 2rem;
+				font-size: 1.25rem;
+				color: white;
+				font-family: 'Neue';
+				font-weight: 400;
+				word-spacing: 0.25rem;
+			}
+		}
+	}
+}

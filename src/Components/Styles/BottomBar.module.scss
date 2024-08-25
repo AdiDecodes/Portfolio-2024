@@ -1,0 +1,83 @@
+.main {
+	display: flex;
+	align-items: center;
+	background-color: var(--bg);
+	min-height: 8vh;
+	height: 8vh;
+	position: fixed;
+	bottom: 2rem;
+	width: 97%;
+	z-index: 1000;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, -2rem);
+	border-radius: 1rem;
+	overflow: hidden;
+
+	> .progressBar {
+		background-color: #2525256d;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+	}
+
+	> .copyright {
+		padding: 1rem 2rem;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 20%;
+
+		> p {
+			color: white;
+			font-size: 0.8rem;
+			font-family: 'Neue';
+			font-weight: 300;
+			letter-spacing: 0.1rem;
+		}
+	}
+
+	> .links {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 7rem;
+
+		> a {
+			all: unset;
+			color: white;
+			font-size: 1rem;
+			font-family: 'Neue';
+			font-weight: 300;
+			letter-spacing: 0.1rem;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+	}
+
+	> .contactButton {
+		border: 1px solid #ffffff47;
+		padding: 1rem 3rem;
+		border-radius: 0.75rem;
+		transition: all 0.2s ease-in-out;
+		margin: 0 1rem 0 0;
+
+		> p {
+			font-size: 0.9rem;
+			color: var(--peach);
+			font-family: 'Neue';
+			font-weight: 600;
+			letter-spacing: 0.1rem;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		&:hover {
+			cursor: pointer;
+			border: 1px solid #ffffff;
+		}
+	}
+}

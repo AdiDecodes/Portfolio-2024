@@ -1,0 +1,110 @@
+.main {
+	min-height: 170vh;
+	display: flex;
+	flex-direction: column;
+	padding: 0rem 5rem;
+	background-color: var(--bg);
+
+	> .titleWrapper {
+		height: fit-content;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		> h2 {
+			font-size: 6vw;
+			font-family: 'Chillax';
+			font-weight: 400;
+			color: white;
+			text-align: right;
+			width: 100%;
+		}
+
+		> p {
+			font-size: 0.85vw;
+			font-family: 'Neue';
+			font-weight: 400;
+			color: var(--subtext);
+			text-align: left;
+			margin: 0 0 0 4rem;
+			width: 100%;
+			word-spacing: 0.3rem;
+		}
+	}
+
+	> .itemWrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin-top: 2rem;
+		padding: 0 5rem;
+		gap: 1rem;
+
+		> .item {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			transition: all 0.2s ease-in-out;
+			height: 10vh;
+
+			> p {
+				font-family: 'Neue';
+				font-size: 2.5vw;
+				font-weight: 400;
+				color: white;
+				margin: 1rem;
+
+				svg {
+					margin: 0 0 0 0.5rem;
+					color: #ff5454;
+					font-size: 1.5rem;
+					vertical-align: middle;
+				}
+			}
+
+			> .icon {
+				transition: all 0.2s ease-in-out;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				aspect-ratio: 1;
+				border: 1px solid transparent;
+
+				> svg {
+					font-size: 3vw;
+					color: white;
+					transition: all 0.2s ease-in-out;
+				}
+
+				&:hover {
+					background-color: transparent;
+					border: 1px solid white;
+
+					> svg {
+						color: #ffffff;
+					}
+				}
+			}
+
+			&:hover {
+				background-color: rgb(30, 30, 30);
+			}
+		}
+
+		> .itemHover {
+			> .icon {
+				background-color: var(--accent);
+
+				> svg {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+}
