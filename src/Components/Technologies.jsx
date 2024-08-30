@@ -1,150 +1,152 @@
-import React, {
-	useState,
-	useEffect,
-} from 'react';
+import React, { useState } from 'react';
 import styles from './Styles/Technologies.module.scss';
-import { GoArrowUpRight } from 'react-icons/go';
-import { GoArrowRight } from 'react-icons/go';
-import { GoHeartFill } from 'react-icons/go';
+import {
+	GoArrowRight,
+	GoHeartFill,
+} from 'react-icons/go';
+import Modal from './Modal/Modal.jsx';
+import js from '../assets/HoverIcons/js.svg';
+import react from '../assets/HoverIcons/react.svg';
+import gsapIcon from '../assets/HoverIcons/gsap.svg';
+import framer from '../assets/HoverIcons/framer.svg';
+import tailwind from '../assets/HoverIcons/tailwind.svg';
+import node from '../assets/HoverIcons/node.svg';
+import express from '../assets/HoverIcons/express.svg';
+import mongo from '../assets/HoverIcons/mongo.svg';
+import redis from '../assets/HoverIcons/redis.svg';
+import graphql from '../assets/HoverIcons/graphql.svg';
+import docker from '../assets/HoverIcons/docker.svg';
+import kubernetes from '../assets/HoverIcons/kubernetes.svg';
 
 const Technologies = () => {
-	const [technologies, setTechnologies] = useState(
-		[
-			{
-				id: 1,
-				name: 'HTML',
-				url: 'https://www.w3schools.com/html/',
-			},
-			{
-				id: 2,
-				name: 'CSS / SCSS',
-				url: 'https://www.w3schools.com/css/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 12,
-				name: 'GSAP',
-				url: 'https://greensock.com/gsap/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 3,
-				name: 'JavaScript',
-				url: 'https://www.w3schools.com/js/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 4,
-				name: 'React.js',
-				url: 'https://reactjs.org/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 5,
-				name: 'Node.js',
-				url: 'https://nodejs.org/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 6,
-				name: 'Express.js',
-				url: 'https://expressjs.com/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 7,
-				name: 'MongoDB',
-				url: 'https://www.mongodb.com/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 8,
-				name: 'Redis',
-				url: 'https://redis.io/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 9,
-				name: 'GraphQL',
-				url: 'https://graphql.org/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 10,
-				name: 'Docker',
-				url: 'https://www.docker.com/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-			{
-				id: 11,
-				name: 'Kubernetes',
-				url: 'https://kubernetes.io/',
-				image:
-					'https://www.w3schools.com/images/w3schools_green.jpg',
-			},
-		]
-	);
+	const [technologies] = useState([
+		{
+			id: 1,
+			name: 'JavaScript',
+			url: 'https://www.w3schools.com/js/',
+			image: js,
+		},
+		{
+			id: 2,
+			name: 'React.js',
+			url: 'https://reactjs.org/',
+			image: react,
+		},
+		{
+			id: 3,
+			name: 'GSAP',
+			url: 'https://greensock.com/gsap/',
+			image: gsapIcon,
+		},
+		{
+			id: 4,
+			name: 'Framer Motion',
+			url: 'https://www.framer.com/motion/',
+			image: framer,
+		},
+		{
+			id: 5,
+			name: 'Tailwind CSS',
+			url: 'https://tailwindcss.com/',
+			image: tailwind,
+		},
+		{
+			id: 6,
+			name: 'Node.js',
+			url: 'https://nodejs.org/',
+			image: node,
+		},
+		{
+			id: 7,
+			name: 'Express.js',
+			url: 'https://expressjs.com/',
+			image: express,
+		},
+		{
+			id: 8,
+			name: 'MongoDB',
+			url: 'https://www.mongodb.com/',
+			image: mongo,
+		},
+		{
+			id: 9,
+			name: 'Redis',
+			url: 'https://redis.io/',
+			image: redis,
+		},
+		{
+			id: 10,
+			name: 'GraphQL',
+			url: 'https://graphql.org/',
+			image: graphql,
+		},
+		{
+			id: 11,
+			name: 'Docker',
+			url: 'https://www.docker.com/',
+			image: docker,
+		},
+		{
+			id: 12,
+			name: 'Kubernetes',
+			url: 'https://kubernetes.io/',
+			image: kubernetes,
+		},
+	]);
 
 	const [currentHovered, setCurrentHovered] =
 		useState(null);
 
-	// useEffect(() => {
-	// 	const itemClassName = `.${styles.item.replace(
-	// 		/ /g,
-	// 		'.'
-	// 	)}`;
-	// 	Shery.hoverWithMediaCircle(itemClassName, {
-	// 		images: [
-	// 			'https://cdn.hashnode.com/res/hashnode/image/upload/v1671464724449/8UIfwdzWN.png',
-	// 			'https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fskill_page%2F40962%2Flogo%2Foptimized%2FCSS-7180db2b35a5dc8e8e9e60729b54de02.png',
-	// 		],
-	// 	});
-	// }, []);
+	const [modal, setModal] = useState({
+		active: false,
+		index: 0,
+	});
 
 	return (
 		<div className={styles.main}>
 			<div className={styles.titleWrapper}>
-				<p>Technology stack I use often</p>
-				<h2>TECHNOLOGIES</h2>
+				<h2>TECHSTACK</h2>
+				<p>TECHNOLOGY I USE OFTEN</p>
 			</div>
 			<div className={styles.itemWrapper}>
-				{technologies.map((technology) => (
+				{technologies.map((technology, index) => (
 					<div
 						key={technology.id}
+						id='hideCursor'
+						onMouseEnter={() => {
+							setModal({ active: true, index });
+						}}
+						onMouseLeave={() => {
+							setModal({ active: false, index });
+						}}
 						className={
-							currentHovered != technology.id
+							modal.index !== index
 								? `${styles.item}`
 								: `${styles.item} ${styles.itemHover}`
 						}
-						onMouseEnter={() => {
-							setCurrentHovered(technology.id);
-						}}
-						onMouseLeave={() => {
-							setCurrentHovered(null);
-						}}
 					>
-						<p>
+						<h6>
 							{technology.name}{' '}
-							{currentHovered == technology.id && (
-								<GoHeartFill />
+							{currentHovered === technology.id ? (
+								<GoHeartFill
+									className={styles.activeHeart}
+								/>
+							) : (
+								<GoHeartFill
+									className={styles.inactiveHeart}
+								/>
 							)}
-						</p>
+						</h6>
 						<div className={styles.icon}>
 							<GoArrowRight />
 						</div>
 					</div>
 				))}
 			</div>
+			<Modal
+				modal={modal}
+				projects={technologies}
+			/>
 		</div>
 	);
 };

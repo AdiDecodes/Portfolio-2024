@@ -4,9 +4,11 @@ import React, {
 } from 'react';
 import styles from './Styles/TopBar.module.scss';
 import { MdOutlineArrowRightAlt } from 'react-icons/md';
+import { showToast } from './Utils/toast';
 
 const TopBar = () => {
 	const [time, setTime] = useState('');
+	const email = 'singhaditya1826@gmail.com';
 
 	const getTime = () => {
 		const date = new Date();
@@ -39,6 +41,17 @@ const TopBar = () => {
 		return () => clearTimeout(timeout); // Cleanup timeout on unmount
 	}, []);
 
+	const copyEmail = (email) => {
+		navigator.clipboard
+			.writeText(email)
+			.then(() => {
+				showToast('Copied!', 'success');
+			})
+			.catch(() => {
+				showToast('Unable to Copy!', 'error');
+			});
+	};
+
 	return (
 		<div className={styles.main}>
 			<p>ADITYA SINGH .</p>
@@ -48,7 +61,13 @@ const TopBar = () => {
 			<div className={styles.contact}>
 				<p>say hi</p>
 				<MdOutlineArrowRightAlt />
-				<p>singhaditya1826@gmail.com</p>
+				<p
+					onClick={() => {
+						copyEmail(email);
+					}}
+				>
+					{email}
+				</p>
 			</div>
 		</div>
 	);

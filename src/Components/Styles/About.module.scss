@@ -15,31 +15,33 @@
 
 		> .titleOne {
 			> p {
-				font-size: 6vw;
+				font-size: 8vw;
 				font-weight: 400;
 				color: white;
-				font-family: 'Chillax';
+				font-family: 'Neue';
 			}
 		}
 
 		> .titleTwo {
+			margin: 2.25rem 0 0 0;
 			> p {
-				font-size: 6vw;
+				font-size: 8vw;
 				font-weight: 400;
 				color: white;
-				font-family: 'Chillax';
+				font-family: 'Neue';
 				text-align: right;
-				width: 50%;
+				width: 60%;
 			}
 		}
 
 		> .subtext {
+			margin: 1rem 0 0 0;
 			p {
 				font-size: 0.7vw;
 				font-weight: 400;
 				color: var(--subtext);
 				font-family: 'Neue';
-				width: 50%;
+				width: 64%;
 				text-align: right;
 				line-height: 2vw;
 				letter-spacing: 0.2rem;
@@ -150,8 +152,9 @@
 			margin: 15rem 0 0 0;
 
 			> p {
-				line-height: 2rem;
-				font-size: 1.25rem;
+				line-height: 2.25rem;
+				font-size: 1.875rem;
+				text-align: justify;
 				color: white;
 				font-family: 'Neue';
 				font-weight: 400;

@@ -11,6 +11,8 @@ const CustomCursor = () => {
 	const followerRef = useRef(null);
 	const [isHovering, setIsHovering] =
 		useState(false);
+	const [isCursorVisible, setIsCursorVisible] =
+		useState(true);
 
 	useEffect(() => {
 		const handleMouseMove = (e) => {
@@ -33,6 +35,42 @@ const CustomCursor = () => {
 
 		const handleMouseLeave = () => {
 			setIsHovering(false);
+		};
+
+		const checkCursorVisibility = () => {
+			const elements = document.querySelectorAll(
+				'#hideCursor'
+			);
+			console.log(elements);
+			let isVisible = true;
+			elements.forEach((element) => {
+				if (element.matches(':hover')) {
+					isVisible = false;
+				}
+			});
+			setIsCursorVisible(isVisible);
+		};
+
+		const handleMouseDown = () => {
+			gsap.to(cursorRef.current, {
+				scale: 1.5,
+				duration: 0.2,
+			});
+			gsap.to(followerRef.current, {
+				scale: 1.5,
+				duration: 0.2,
+			});
+		};
+
+		const handleMouseUp = () => {
+			gsap.to(cursorRef.current, {
+				scale: 1,
+				duration: 0.2,
+			});
+			gsap.to(followerRef.current, {
+				scale: 1,
+				duration: 0.2,
+			});
 		};
 
 		const handleVisibilityChange = () => {
@@ -61,10 +99,24 @@ const CustomCursor = () => {
 			'mousemove',
 			handleMouseMove
 		);
+		window.addEventListener(
+			'mouseup',
+			handleMouseUp
+		);
+		window.addEventListener(
+			'mousedown',
+			handleMouseDown
+		);
+
+		window.addEventListener(
+			'mousemove',
+			checkCursorVisibility
+		);
 
 		const textElements = document.querySelectorAll(
-			'p, h1, h2, h3, h4, h5, h6, a'
+			'p, h1, h2, h3, h4, h5, a'
 		);
+
 		textElements.forEach((el) => {
 			el.addEventListener(
 				'mouseenter',
@@ -101,7 +153,7 @@ const CustomCursor = () => {
 				handleVisibilityChange
 			);
 		};
-	}, [isHovering]);
+	}, [isHovering, isCursorVisible]);
 
 	return (
 		<>

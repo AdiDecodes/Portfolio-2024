@@ -1,6 +1,7 @@
 import React, {
 	useEffect,
 	useState,
+	useRef,
 } from 'react';
 import styles from '../Styles/Home.module.scss';
 import LocomotiveScroll from 'locomotive-scroll';
@@ -10,20 +11,16 @@ import About from '../Components/About';
 import Technologies from '../Components/Technologies';
 import CustomCursor from '../Components/Cursor.jsx';
 import TopBar from '../Components/TopBar.jsx';
+import Project from '../Components/Projects/Project.jsx';
 
 const Home = () => {
-	// const locomotiveScroll = new LocomotiveScroll({
-	// 	el: document.querySelector(
-	// 		'[data-scroll-container]'
-	// 	),
-	// 	smooth: true,
-	// 	smoothMobile: true,
-	// 	getDirection: true,
-	// });
+	const scrollRef = useRef(null);
 	const [scrollProgress, setScrollProgress] =
 		useState(0);
 
 	useEffect(() => {
+		const locomotiveScroll = new LocomotiveScroll();
+
 		const handleScroll = () => {
 			const scrollTop = window.scrollY;
 			const docHeight =
@@ -35,7 +32,9 @@ const Home = () => {
 		};
 
 		window.addEventListener('scroll', handleScroll);
+
 		return () => {
+			locomotiveScroll.destroy();
 			window.removeEventListener(
 				'scroll',
 				handleScroll
@@ -44,14 +43,15 @@ const Home = () => {
 	}, []);
 
 	return (
-		<>
+		<div ref={scrollRef}>
 			<CustomCursor />
 			<TopBar />
 			<Hero />
 			<About />
 			<Technologies />
+			<Project />
 			<BottomBar progress={scrollProgress} />
-		</>
+		</div>
 	);
 };
 

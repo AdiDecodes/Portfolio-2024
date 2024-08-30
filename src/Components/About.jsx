@@ -14,7 +14,7 @@ const About = () => {
 					<p>ME</p>
 				</div>
 				<div className={styles.subtext}>
-					<p>I have been working since 2022</p>
+					<p>I HAVE BEEN WORKING SINCE 2022</p>
 				</div>
 				<div className={styles.image}>
 					<img

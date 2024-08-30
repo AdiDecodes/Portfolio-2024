@@ -1,35 +1,33 @@
 .main {
-	min-height: 170vh;
 	display: flex;
 	flex-direction: column;
 	padding: 0rem 5rem;
 	background-color: var(--bg);
 
 	> .titleWrapper {
-		height: fit-content;
 		width: 100%;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
+		flex-direction: column;
 
 		> h2 {
-			font-size: 6vw;
-			font-family: 'Chillax';
-			font-weight: 400;
-			color: white;
-			text-align: right;
-			width: 100%;
-		}
-
-		> p {
-			font-size: 0.85vw;
+			font-size: 19rem;
 			font-family: 'Neue';
 			font-weight: 400;
-			color: var(--subtext);
-			text-align: left;
-			margin: 0 0 0 4rem;
+			color: white;
+			line-height: 90%;
+		}
+
+		p {
 			width: 100%;
-			word-spacing: 0.3rem;
+			font-size: 1.05rem;
+			font-weight: 400;
+			font-family: 'Neue';
+			color: #ffffff49;
+			line-height: 90%;
+			text-align: left;
+			padding: 0 0 0 5.5rem;
 		}
 	}
 
@@ -45,25 +43,36 @@
 		gap: 1rem;
 
 		> .item {
-			width: 100%;
+			width: 80%;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 			transition: all 0.2s ease-in-out;
 			height: 10vh;
 
-			> p {
+			> h6 {
 				font-family: 'Neue';
 				font-size: 2.5vw;
-				font-weight: 400;
+				font-weight: 300;
 				color: white;
 				margin: 1rem;
 
-				svg {
+				.activeHeart {
 					margin: 0 0 0 0.5rem;
-					color: #ff5454;
+					color: white;
 					font-size: 1.5rem;
 					vertical-align: middle;
+					opacity: 1;
+					transition: all 0.2s ease-in-out;
+				}
+
+				.inactiveHeart {
+					margin: 0 0 0 0.5rem;
+					color: white;
+					font-size: 1.5rem;
+					vertical-align: middle;
+					opacity: 0;
+					transition: all 0.2s ease-in-out;
 				}
 			}
 
@@ -94,17 +103,33 @@
 
 			&:hover {
 				background-color: rgb(30, 30, 30);
-			}
-		}
 
-		> .itemHover {
-			> .icon {
-				background-color: var(--accent);
+				> .icon {
+					background-color: var(--accent);
 
-				> svg {
-					transform: rotate(-45deg);
+					> svg {
+						transform: rotate(-45deg);
+					}
 				}
 			}
 		}
+
+		// > .itemHover {
+		// 	> .icon {
+		// 		background-color: var(--accent);
+
+		// 		> svg {
+		// 			transform: rotate(-45deg);
+		// 		}
+		// 	}
+		// }
+	}
+	.imageHover {
+		position: absolute;
+		height: 10rem;
+		width: 10rem;
+		pointer-events: none;
+		transform: translate(-50%, -50%);
+		opacity: 0;
 	}
 }

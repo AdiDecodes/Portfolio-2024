@@ -52,6 +52,26 @@
 			font-family: 'Neue';
 			font-weight: 400;
 			color: var(--border);
+			position: relative;
+
+			&:hover {
+				color: white;
+
+				&::after {
+					width: 100%;
+				}
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				bottom: -5px;
+				width: 0%;
+				height: 1px;
+				background-color: var(--border);
+				transition: all 0.5s;
+			}
 		}
 	}
 }

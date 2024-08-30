@@ -20,7 +20,7 @@
 }
 
 .cursor-follower {
-	background-color: #ffffff;
+	background-color: #fff;
 	width: 30px;
 	height: 30px;
 	mix-blend-mode: normal;
@@ -31,3 +31,4 @@
 	height: 60px;
 	mix-blend-mode: difference;
 }
+

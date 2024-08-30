@@ -15,7 +15,7 @@
 	overflow: hidden;
 
 	> .progressBar {
-		background-color: #2525256d;
+		background-color: #202020;
 		height: 100%;
 		position: absolute;
 		top: 0;
@@ -61,13 +61,14 @@
 	> .contactButton {
 		border: 1px solid #ffffff47;
 		padding: 1rem 3rem;
-		border-radius: 0.75rem;
+		border-radius: 10rem;
 		transition: all 0.2s ease-in-out;
 		margin: 0 1rem 0 0;
+		position: relative;
 
 		> p {
 			font-size: 0.9rem;
-			color: var(--peach);
+			color: var(--accent);
 			font-family: 'Neue';
 			font-weight: 600;
 			letter-spacing: 0.1rem;
@@ -75,9 +76,37 @@
 			transition: 0.3s;
 		}
 
+		@keyframes marqee {
+			0% {
+				transform: translateY(0);
+			}
+			100% {
+				transform: translateY(-100%);
+			}
+		}
+
+		> span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transition: 0.3s;
+			width: 100%;
+			display: block;
+			background-color: white;
+		}
+
 		&:hover {
 			cursor: pointer;
 			border: 1px solid #ffffff;
+
+			> p {
+				opacity: 0;
+			}
+
+			> span {
+				animation: marqee 2s linear;
+			}
 		}
 	}
 }

@@ -19,13 +19,14 @@ const BottomBar = ({ progress }) => {
 				<p>Aditya Singh © 2024</p>
 			</div>
 			<div className={styles.links}>
-				<Link to='/AboutMe'>About Me</Link>
-				<Link to='/Projects'>Projects</Link>
-				<Link to='/Courses'>Courses</Link>
-				<Link to='/Technology'>Technology</Link>
+				<Link to='/AboutMe'>ABOUT ME</Link>
+				<Link to='/Projects'>PROJECTS</Link>
+				<Link to='/Courses'>COURSES</Link>
+				<Link to='/Technology'>TECHNOLOGY</Link>
 			</div>
 			<div className={styles.contactButton}>
-				<p>Contact</p>
+				<p>CONTACT</p>
+				<span></span>
 			</div>
 		</div>
 	);

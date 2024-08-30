@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Home from './Pages/Home';
 import Contact from './Pages/Contact';
 import Notfound from './Pages/Notfound';
@@ -8,13 +8,12 @@ import {
 	Route,
 	Routes,
 } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 const AppRoutes = () => {
-	useEffect(() => {
-		// Shery.mouseFollower();
-	}, []);
 	return (
 		<>
+			<Toaster />
 			<Router>
 				<Routes>
 					<Route

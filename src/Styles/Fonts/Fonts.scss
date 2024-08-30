@@ -81,6 +81,22 @@
 @font-face {
 	font-family: 'Neue';
 	font-style: normal;
+	font-weight: 500;
+	src: url('../../Fonts/Neue/NeueHaasDisplayMediu.ttf')
+		format('truetype');
+}
+
+@font-face {
+	font-family: 'Neue';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../../Fonts/Neue/NeueHaasDisplayRoman.ttf')
+		format('truetype');
+}
+
+@font-face {
+	font-family: 'Neue';
+	font-style: normal;
 	font-weight: 300;
 	src: url('../../Fonts/Neue/NeueHaasDisplayLight.ttf')
 		format('truetype');
