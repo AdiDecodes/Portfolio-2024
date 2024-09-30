@@ -12,8 +12,19 @@ import Technologies from '../Components/Technologies';
 import CustomCursor from '../Components/Cursor.jsx';
 import TopBar from '../Components/TopBar.jsx';
 import Project from '../Components/Projects/Project.jsx';
+import Course from '../Components/Courses/Course.jsx';
+import Contact from '../Components/Contact/Contact.jsx';
+import Social from '../Components/Social/Social.jsx';
 
 const Home = () => {
+	const heroRef = useRef(null);
+	const aboutRef = useRef(null);
+	const technologiesRef = useRef(null);
+	const projectRef = useRef(null);
+	const courseRef = useRef(null);
+	const socialRef = useRef(null);
+	const contactRef = useRef(null);
+
 	const scrollRef = useRef(null);
 	const [scrollProgress, setScrollProgress] =
 		useState(0);
@@ -28,6 +39,7 @@ const Home = () => {
 				document.documentElement.clientHeight;
 			const scrollPercent =
 				(scrollTop / docHeight) * 100;
+
 			setScrollProgress(scrollPercent);
 		};
 
@@ -43,14 +55,45 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div ref={scrollRef}>
+		<div
+			className={styles.main}
+			ref={scrollRef}
+		>
 			<CustomCursor />
 			<TopBar />
-			<Hero />
-			<About />
-			<Technologies />
-			<Project />
-			<BottomBar progress={scrollProgress} />
+			<div ref={heroRef}>
+				<Hero />
+			</div>
+			<div ref={aboutRef}>
+				<About />
+			</div>
+			<div ref={technologiesRef}>
+				<Technologies />
+			</div>
+			<div ref={projectRef}>
+				<Project />
+			</div>
+			<div ref={courseRef}>
+				<Course />
+			</div>
+			<div ref={socialRef}>
+				<Social />
+			</div>
+			<div ref={contactRef}>
+				<Contact />
+			</div>
+			<BottomBar
+				progress={scrollProgress}
+				sections={{
+					hero: heroRef,
+					about: aboutRef,
+					technologies: technologiesRef,
+					project: projectRef,
+					course: courseRef,
+					social: socialRef,
+					contact: contactRef,
+				}}
+			/>
 		</div>
 	);
 };

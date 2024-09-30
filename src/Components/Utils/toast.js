@@ -3,7 +3,7 @@ import styles from './toast.module.scss';
 
 const toastProps = {
 	duration: 4000,
-	position: 'bottom-right',
+	position: 'top-right',
 	className: styles.toast,
 };
 

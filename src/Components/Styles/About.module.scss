@@ -1,165 +1,83 @@
 .main {
 	background-color: var(--bg);
 	display: flex;
-	justify-content: center;
+	// justify-content: center;
+	flex-direction: column;
 	min-height: 100vh;
-	padding: 0 2rem;
+	padding: 0 2rem 5rem 2rem;
 
-	p {
-		line-height: 6vw;
-	}
+	> .heading {
+		width: 100%;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		flex-direction: column;
+		margin: 0 0 1rem 0;
 
-	> .left {
-		height: 100%;
-		width: 50%;
-
-		> .titleOne {
-			> p {
-				font-size: 8vw;
-				font-weight: 400;
-				color: white;
-				font-family: 'Neue';
-			}
-		}
-
-		> .titleTwo {
-			margin: 2.25rem 0 0 0;
-			> p {
-				font-size: 8vw;
-				font-weight: 400;
-				color: white;
-				font-family: 'Neue';
-				text-align: right;
-				width: 60%;
-			}
-		}
-
-		> .subtext {
-			margin: 1rem 0 0 0;
-			p {
-				font-size: 0.7vw;
-				font-weight: 400;
-				color: var(--subtext);
-				font-family: 'Neue';
-				width: 64%;
-				text-align: right;
-				line-height: 2vw;
-				letter-spacing: 0.2rem;
-			}
-		}
-
-		> .image {
-			height: 25rem;
-			aspect-ratio: 1;
-			margin: 6rem 0 0 2rem;
-
-			> img {
-				height: 100%;
-				width: 100%;
-				border-radius: 100%;
-				object-fit: cover;
-			}
-		}
-	}
-
-	> .right {
-		height: 100%;
-		width: 50%;
-
-		> .roleWrapper {
+		h2 {
 			width: 100%;
+			font-size: 19vw;
+			font-weight: 400;
+			color: white;
+			line-height: 90%;
+			text-align: center;
+		}
+
+		> .smallInfo {
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
+			justify-content: flex-end;
+			margin: 0 4rem 0 0;
+			gap: 0.5rem;
 
-			> .itemOne {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-direction: column;
-
-				@keyframes fadeInOut {
-					0%,
-					33.33%,
-					100% {
-						color: white;
-						opacity: 0;
-					}
-					16.66% {
-						opacity: 1;
-					}
-				}
-
+			&:hover {
 				> svg {
-					font-size: 5rem;
-					color: transparent;
-					transition: all 0.3s ease;
-					transform: rotate(90deg);
-					animation: fadeInOut 6s linear infinite;
-
-					&:nth-of-type(1) {
-						animation-delay: 0s;
-					}
-
-					&:nth-of-type(2) {
-						animation-delay: 2s;
-					}
-
-					&:nth-of-type(3) {
-						animation-delay: 4s;
-					}
-				}
-
-				p {
-					font-size: 1vw;
-					font-weight: 400;
-					color: white;
-					font-family: 'Neue';
-					margin: 0 0 0 2.5rem;
-				}
-
-				&:hover {
-					cursor: pointer;
-					> svg {
-						color: var(--subtext);
-					}
+					color: #ffffffb8;
 				}
 			}
 
-			> .itemOne:nth-child(1) {
-				> svg {
-					animation: fadeInOut 6s ease infinite;
-					animation-delay: 0s;
-				}
+			p {
+				font-size: 0.85vw;
+				font-weight: 400;
+				color: #ffffff49;
+				line-height: 90%;
+				letter-spacing: 0.2rem;
+				text-align: center;
+				padding: 0;
+				text-transform: uppercase;
 			}
 
-			> .itemOne:nth-child(2) {
-				> svg {
-					animation: fadeInOut 6s ease infinite;
-					animation-delay: 2s;
-				}
-			}
-
-			> .itemOne:nth-child(3) {
-				> svg {
-					animation: fadeInOut 6s ease infinite;
-					animation-delay: 4s;
-				}
+			> svg {
+				font-size: 1.75vw;
+				color: #ffffffdc;
+				transition: all 0.35s ease-in-out;
+				transform: rotate(90deg);
 			}
 		}
+	}
 
-		> .description {
-			margin: 15rem 0 0 0;
+	> .dataWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		gap: 2rem;
+		padding: 0 1.5rem;
+		margin: 2rem 0 0 0;
 
-			> p {
-				line-height: 2.25rem;
-				font-size: 1.875rem;
-				text-align: justify;
-				color: white;
-				font-family: 'Neue';
-				font-weight: 400;
-				word-spacing: 0.25rem;
-			}
+		> p {
+			font-size: 1.25vw;
+			line-height: 1.5;
+			font-family: 'Chillax';
+			text-align: justify;
+			color: #ffffffb3;
+		}
+
+		> img {
+			width: 30%;
+			aspect-ratio: 9/11;
+			border-radius: 1.5rem;
+			background-color: white;
 		}
 	}
 }

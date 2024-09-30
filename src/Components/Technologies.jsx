@@ -112,7 +112,7 @@ const Technologies = () => {
 				{technologies.map((technology, index) => (
 					<div
 						key={technology.id}
-						id='hideCursor'
+						data-hide-cursor='true'
 						onMouseEnter={() => {
 							setModal({ active: true, index });
 						}}

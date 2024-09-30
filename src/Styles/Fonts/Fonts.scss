@@ -9,6 +9,14 @@
 @font-face {
 	font-family: 'Chillax';
 	font-style: normal;
+	font-weight: 500;
+	src: url('../../Fonts/Chillax-Semibold.otf')
+		format('opentype');
+}
+
+@font-face {
+	font-family: 'Chillax';
+	font-style: normal;
 	font-weight: 400;
 	src: url('../../Fonts/Chillax-Regular.otf')
 		format('opentype');

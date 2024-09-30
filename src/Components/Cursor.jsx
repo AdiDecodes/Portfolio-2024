@@ -14,6 +14,36 @@ const CustomCursor = () => {
 	const [isCursorVisible, setIsCursorVisible] =
 		useState(true);
 
+	const hideCursor = () => {
+		gsap.to(cursorRef.current, {
+			opacity: 0,
+			duration: 0.2,
+		});
+		gsap.to(followerRef.current, {
+			opacity: 0,
+			duration: 0.2,
+		});
+	};
+
+	const showCursor = () => {
+		gsap.to(cursorRef.current, {
+			opacity: 1,
+			duration: 0.2,
+		});
+		gsap.to(followerRef.current, {
+			opacity: 1,
+			duration: 0.2,
+		});
+	};
+
+	useEffect(() => {
+		if (!isCursorVisible) {
+			hideCursor();
+		} else {
+			showCursor();
+		}
+	}, [isCursorVisible]);
+
 	useEffect(() => {
 		const handleMouseMove = (e) => {
 			gsap.to(cursorRef.current, {
@@ -29,7 +59,7 @@ const CustomCursor = () => {
 			});
 		};
 
-		const handleMouseEnter = () => {
+		const handleMouseEnter = (e) => {
 			setIsHovering(true);
 		};
 
@@ -37,14 +67,18 @@ const CustomCursor = () => {
 			setIsHovering(false);
 		};
 
-		const checkCursorVisibility = () => {
+		window.addEventListener(
+			'mousemove',
+			handleMouseMove
+		);
+
+		const checkCursorVisibility = (e) => {
 			const elements = document.querySelectorAll(
-				'#hideCursor'
+				'[data-hide-cursor="true"]'
 			);
-			console.log(elements);
 			let isVisible = true;
 			elements.forEach((element) => {
-				if (element.matches(':hover')) {
+				if (element.contains(e.target)) {
 					isVisible = false;
 				}
 			});
@@ -107,16 +141,18 @@ const CustomCursor = () => {
 			'mousedown',
 			handleMouseDown
 		);
-
 		window.addEventListener(
 			'mousemove',
 			checkCursorVisibility
+		);
+		document.addEventListener(
+			'visibilitychange',
+			handleVisibilityChange
 		);
 
 		const textElements = document.querySelectorAll(
 			'p, h1, h2, h3, h4, h5, a'
 		);
-
 		textElements.forEach((el) => {
 			el.addEventListener(
 				'mouseenter',
@@ -128,15 +164,22 @@ const CustomCursor = () => {
 			);
 		});
 
-		document.addEventListener(
-			'visibilitychange',
-			handleVisibilityChange
-		);
-
 		return () => {
 			window.removeEventListener(
 				'mousemove',
 				handleMouseMove
+			);
+			window.removeEventListener(
+				'mouseup',
+				handleMouseUp
+			);
+			window.removeEventListener(
+				'mousedown',
+				handleMouseDown
+			);
+			window.removeEventListener(
+				'mousemove',
+				checkCursorVisibility
 			);
 			textElements.forEach((el) => {
 				el.removeEventListener(
@@ -160,12 +203,14 @@ const CustomCursor = () => {
 			<div
 				ref={cursorRef}
 				className='custom-cursor'
+				style={{ willChange: 'transform, opacity' }}
 			></div>
 			<div
 				ref={followerRef}
 				className={`cursor-follower ${
 					isHovering ? 'is-hovering' : ''
 				}`}
+				style={{ willChange: 'transform, opacity' }}
 			></div>
 		</>
 	);

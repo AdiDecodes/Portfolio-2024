@@ -9,6 +9,7 @@ import {
 	Routes,
 } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import Preloader from './Components/Preloader/Preloader';
 
 const AppRoutes = () => {
 	return (
@@ -23,6 +24,10 @@ const AppRoutes = () => {
 					<Route
 						path='/contact'
 						element={<Contact />}
+					/>
+					<Route
+						path='/preloader'
+						element={<Preloader />}
 					/>
 					<Route
 						path='*'

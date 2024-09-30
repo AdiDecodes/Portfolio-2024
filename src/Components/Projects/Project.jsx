@@ -3,6 +3,7 @@ import styles from './style.module.scss';
 import techbucket from '../../assets/Projects/techbucket.png';
 import cleverstudio from '../../assets/Projects/cleverstudio.png';
 import igloaded from '../../assets/Projects/igloaded.png';
+import vocalize from '../../assets/Projects/vocalize.png';
 import { GoArrowRight } from 'react-icons/go';
 
 const Project = () => {
@@ -14,7 +15,7 @@ const Project = () => {
 				'A tech blog that provides you with the latest tech news and reviews.',
 			image: techbucket,
 			url: 'https://techbucket.netlify.app/',
-			year: '2021',
+			year: '2024',
 		},
 		{
 			id: 2,
@@ -23,7 +24,7 @@ const Project = () => {
 				'A web development agency that provides you with the best web development services.',
 			image: cleverstudio,
 			url: 'https://cleverstudio.netlify.app/',
-			year: '2021',
+			year: '2024',
 		},
 		{
 			id: 3,
@@ -32,16 +33,16 @@ const Project = () => {
 				'A web app that helps you download Instagram photos and videos.',
 			image: igloaded,
 			url: 'https://igloaded.netlify.app/',
-			year: '2021',
+			year: '2023',
 		},
 		{
 			id: 4,
-			name: 'IGLoaded',
+			name: 'Vocalize (Under Development)',
 			description:
-				'A web app that helps you download Instagram photos and videos.',
-			image: igloaded,
-			url: 'https://igloaded.netlify.app/',
-			year: '2021',
+				'Vocalize is a web based platform that supports realtime speech translation and captions for your meeting.',
+			image: vocalize,
+			url: '#',
+			year: '2024',
 		},
 	];
 	return (

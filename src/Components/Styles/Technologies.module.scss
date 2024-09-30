@@ -12,7 +12,7 @@
 		flex-direction: column;
 
 		> h2 {
-			font-size: 19rem;
+			font-size: 17vw;
 			font-family: 'Neue';
 			font-weight: 400;
 			color: white;
@@ -21,13 +21,14 @@
 
 		p {
 			width: 100%;
-			font-size: 1.05rem;
+			font-size: 0.85vw;
 			font-weight: 400;
 			font-family: 'Neue';
-			color: #ffffff49;
-			line-height: 90%;
+			color: #ffffff64;
+			letter-spacing: 0.2rem;
 			text-align: left;
-			padding: 0 0 0 5.5rem;
+			padding: 0 5rem;
+			margin: 0.5rem 0;
 		}
 	}
 
@@ -39,11 +40,12 @@
 		align-items: center;
 		width: 100%;
 		margin-top: 2rem;
-		padding: 0 5rem;
+		padding: 2rem 5rem;
 		gap: 1rem;
+		cursor: none;
 
 		> .item {
-			width: 80%;
+			width: 85%;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
